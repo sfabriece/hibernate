@@ -1,0 +1,21 @@
+<?xml version="1.0"?> <!DOCTYPE hibernate-mapping PUBLIC  "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    <class name="pojo.Ansatt" table="ansatt">
+        <id name="id" type="int" column="id">
+            <generator class="native"/>
+        </id>
+        <property name="forNavn">
+            <column name="fornavn"/>
+        </property>
+        <property name="etterNavn">
+            <column name="etternavn"/>
+        </property>
+        <property name="epostAdresse">
+            <column name="epostadresse"/>
+        </property>
+        <property name="kontor">
+            <column name="kontor"/>
+        </property>
+    </class>
+</hibernate-mapping>
