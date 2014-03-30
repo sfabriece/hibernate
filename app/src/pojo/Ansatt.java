@@ -1,21 +1,48 @@
 package pojo;
 
+import java.util.HashSet;
+import java.util.Set;
+
 /**
  * Created by fabi on 27.03.14.
  */
 public class Ansatt {
-    private Integer id;
+    private Integer ansattID;
     private String forNavn;
     private String etterNavn;
-    private String epostAdresse;
+    private String epost;
     private String kontor;
+    private Set<Prosjekt> prosjekt;
 
-    public Integer getId() {
-        return id;
+    public Ansatt(){
+        ansattID = null;
+        prosjekt = new HashSet<Prosjekt>();
+    }
+    public Ansatt(String forNavn, String etterNavn, String epostAdresse, String kontor){
+        this();
+        this.forNavn = forNavn;
+        this.etterNavn = etterNavn;
+        this.epost = epostAdresse;
+        this.kontor = kontor;
+    }
+    public Set<Prosjekt> getProsjekt() {
+        return prosjekt;
     }
 
-    public void setId(Integer id) {
-        this.id = id;
+    public void setProsjekt(Set<Prosjekt> prosjekt) {
+        this.prosjekt = prosjekt;
+    }
+
+    public void addProsjekt(Prosjekt p){
+        prosjekt.add(p);
+    }
+
+    public Integer getAnsattID() {
+        return ansattID;
+    }
+
+    public void setAnsattID(Integer ansattID) {
+        this.ansattID = ansattID;
     }
 
     public String getForNavn() {
@@ -34,12 +61,12 @@ public class Ansatt {
         this.etterNavn = etterNavn;
     }
 
-    public String getEpostAdresse() {
-        return epostAdresse;
+    public String getEpost() {
+        return epost;
     }
 
-    public void setEpostAdresse(String epostAdresse) {
-        this.epostAdresse = epostAdresse;
+    public void setEpost(String epostAdresse) {
+        this.epost = epostAdresse;
     }
 
     public String getKontor() {

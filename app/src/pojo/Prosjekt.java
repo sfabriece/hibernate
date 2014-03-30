@@ -1,28 +1,43 @@
 package pojo;
 
+import java.util.HashSet;
+import java.util.Set;
+
 /**
  * Created by fabi on 27.03.14.
  */
 public class Prosjekt {
-    private Integer id;
-    private Integer eier;
+    private Integer pid;
     private String navn;
     private int nummer;
+    private Set<Ansatt> ansatter;
 
-    public Integer getId() {
-        return id;
+    public Prosjekt(){
+        pid = null;
+        ansatter = new HashSet<Ansatt>();
+    }
+    public Prosjekt(String navn, Integer nummer){
+        this();
+        this.navn = navn;
+        this.nummer = nummer;
+    }
+    public void addAnsatt(Ansatt a){
+        ansatter.add(a);
+    }
+    public Set<Ansatt> getAnsatter() {
+        return ansatter;
     }
 
-    public void setId(Integer id) {
-        this.id = id;
+    public void setAnsatter(Set<Ansatt> ansatter) {
+        this.ansatter = ansatter;
     }
 
-    public Integer getEier() {
-        return eier;
+    public Integer getPid() {
+        return pid;
     }
 
-    public void setEier(Integer eier) {
-        this.eier = eier;
+    public void setPid(Integer id) {
+        this.pid = id;
     }
 
     public String getNavn() {
